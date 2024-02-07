@@ -1,0 +1,202 @@
+:root {
+    font-size: min(3vw, 100%);
+
+    --clr-neutral-100: hsl(228, 16%, 94%);
+    --clr-neutral-900: hsl(240, 17%, 7%);
+    --clr-primary-200: hsl(209, 58%, 53%);
+    --clr-primary-300: hsl(209, 58%, 48%);
+    --clr-primary-400: hsl(209, 58%, 43%);
+    --clr-primary-700: hsl(209, 58%, 28%);
+    --clr-primary-900: hsl(209, 59%, 18%);
+    --clr-secondary-400: hsl(56, 15%, 81%);
+    --clr-accent-400: hsl(359, 58%, 43%);
+
+    --ff-heading: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --ff-body: system-ui;
+
+    --fw-regular: 300;
+    --fw-semi-bold: 400;
+    --fw-bold: 700;
+
+    --fs-200: 0.875rem;
+    --fs-300: 1rem;
+    --fs-400: 1.125rem;
+    --fs-500: 1.375rem;
+    --fs-600: 1.75rem;
+    --fs-700: 3.25rem;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    // outline: 2px solid red;
+}
+
+/*-----Scrollbar Settings-----*/
+/* Chrome + */
+::-webkit-scrollbar {
+    width: .5rem;
+    height: .5rem;
+    background: var(--clr-primary-900);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--clr-primary-700);
+    border-radius: 100vw;
+}
+/* Other Support */
+@supports (scrollbar-color: red blue) {
+    * {
+        scrollbar-color: var(--clr-primary-700) var(--clr-primary-900);
+        scrollbar-width: thin;
+    }
+}
+/*----------------------------*/
+
+html, body {
+    position: static;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff-body);
+    scroll-behavior: smooth;
+}
+
+html {
+    background-color: var(--clr-neutral-900);
+    color: var(--clr-neutral-100);
+}
+
+main {
+    padding: 1rem;
+    max-width: 75ch;
+    margin-inline: auto;
+}
+
+h1,h2,h3 {
+    font-family: var(--ff-heading);
+}
+
+#date {
+    text-align: center;
+    font-size: var(--fs-700);
+    text-transform: uppercase;
+    margin-inline: auto;
+    padding: .25em;
+    border-bottom: 0.135rem solid var(--clr-neutral-100);
+    background-color: var(--clr-primary-900);
+}
+
+#time {
+    text-align: center;
+    margin-block: 1em;
+    font-size: var(--fs-600);
+
+    &::before, &::after {
+        content: ' — ';
+    }
+}
+
+.card-titles {
+    display: flex;
+    justify-content: space-around;
+    font-size: var(--fs-500);
+    margin-block: .25em;
+
+    & > * {
+        flex-basis: 100%;
+        text-align: center;
+
+        &::before, &::after {
+            content: ' — ';
+        }
+    }
+}
+
+.specific {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+
+    &_card {
+        background-color: var(--clr-primary-400);
+        padding: .75em 1.25em;
+        border-radius: 1em;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        * {
+            display: block;
+            width: 100%;
+        }
+
+        .class {
+            font-size: var(--fs-600);
+            margin-block: .135em;
+            border-bottom: 0.135rem solid var(--clr-neutral-100);
+        }
+
+        .split {
+            display: flex;
+            justify-content: space-between;
+            padding-top: .25em;
+
+            .period {
+                text-align: end;
+            }
+        }
+
+    }
+}
+
+.today {
+    margin-block: 1rem;
+    height: 45vh;
+    height: 45dvh;
+    overflow-y: scroll;
+
+    .period-block {
+        display: grid;
+        grid-template-columns: max(20%, 8rem) 4fr;
+        border: 0.135rem solid var(--clr-primary-300);
+        
+    }
+
+    .period-block:nth-child(2n):not(.current-period-highlight) {
+        background-color: hsla(0, 0%, 100%, .1);
+    }
+    .period-block:nth-child(2n - 1):not(.current-period-highlight) {
+        background-color: hsla(0, 0%, 100%, .2);
+    }
+
+    .current-period-highlight {
+        background-color: hsla(300, 100%, 50%, 0.3);
+    }
+
+    .period-num {
+        padding: .75em 1em;
+        font-size: var(--fs-500);
+        text-align: center;
+    }
+
+    .details {
+        padding: .75em 1em;
+        border-left: 0.135rem solid var(--clr-primary-300);
+
+        & > * {
+            display: block;
+        }
+
+        .class {
+            font-size: var(--fs-600);
+            margin-block: 0.135em;
+        }
+
+        .teacher-room {
+            border-top: 0.135em solid var(--clr-neutral-100);
+            height: 1lh;
+        }
+    }
+}

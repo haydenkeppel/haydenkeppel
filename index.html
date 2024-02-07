@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="School Timetable"> <!--What the Site is-->
+    <meta name="author" content="Hayden Keppel"> <!--Your Name-->
+    <title>TimeTable</title> <!--Title of page (First half then second half) (Tab name)-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" /> <!--Stylesheet Link-->
+    <script src="https://kit.fontawesome.com/a4f3d1faa5.js" crossorigin="anonymous"></script>
+</head>
+<body onload="setInterval(updateTime, 1000);">
+    <h1 id="date"></h1>
+    <h2 id="time"></h2>
+    <main>
+        <h3 class="card-titles"><span>Current</span><span>Next</span></h3>
+        <div class="specific">
+            <div id="now" class="specific_card">
+                <span class="time"></span>
+                <h3 class="class"></h3>
+                <div class="split">
+                    <span class="teacher-room"></span>
+                    <span class="period"></span>
+                </div>
+            </div>
+            <div id="next" class="specific_card">
+                <span class="time"></span>
+                <h3 class="class"></h3>
+                <div class="split">
+                    <span class="teacher-room"></span>
+                    <span class="period"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="today" id="today">
+            
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
