@@ -3,13 +3,13 @@
   font-size: min(3vw, 100%);
   --clr-neutral-100: hsl(228, 16%, 94%);
   --clr-neutral-900: hsl(240, 17%, 7%);
-  --clr-primary-200: hsl(209, 58%, 53%);
-  --clr-primary-300: hsl(209, 58%, 48%);
-  --clr-primary-400: hsl(209, 58%, 43%);
-  --clr-primary-700: hsl(209, 58%, 28%);
-  --clr-primary-900: hsl(209, 59%, 18%);
+  --clr-primary-200: hsl(var(--hue), 58%, 53%);
+  --clr-primary-300: hsl(var(--hue), 58%, 48%);
+  --clr-primary-400: hsl(var(--hue), 58%, 43%);
+  --clr-primary-700: hsl(var(--hue), 58%, 28%);
+  --clr-primary-900: hsl(var(--hue), 59%, 18%);
   --clr-secondary-400: hsl(56, 15%, 81%);
-  --clr-accent-400: hsl(359, 58%, 43%);
+  --clr-accent-400: hsla(calc(var(--hue) + 180), 58%, 43%, 0.5);
   --ff-heading: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   --ff-body: system-ui;
   --fw-regular: 300;
@@ -156,7 +156,7 @@ h1, h2, h3 {
   background-color: hsla(0, 0%, 100%, 0.2);
 }
 .today .current-period-highlight {
-  background-color: hsla(300, 100%, 50%, 0.3);
+  background-color: var(--clr-accent-400);
 }
 .today .period-num {
   padding: 0.75em 1em;
