@@ -340,6 +340,14 @@ const MONTH_LIST = [
     "October", "November", "December"
 ];
 
+let root = document.querySelector(":root");
+let hue = 245;
+rgbColours();
+function rgbColours() {
+    hue += 1
+    root.style.setProperty('--hue', hue);
+}
+
 // TEMP:
 const WEEKDAY = new Date().getDay();
 // const WEEKDAY = 0;
@@ -491,3 +499,4 @@ function updatePeriod(timeValue) {
 
 updateTime();
 updatePeriod(timeValue);
+setInterval(rgbColours, 600)
