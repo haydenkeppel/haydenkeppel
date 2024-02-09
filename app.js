@@ -500,3 +500,4 @@ function updatePeriod(timeValue) {
 updateTime();
 updatePeriod(timeValue);
 setInterval(rgbColours, 600)
+
