@@ -341,7 +341,7 @@ const MONTH_LIST = [
 ];
 
 let root = document.querySelector(":root");
-let hue = 245;
+let hue = 345;
 rgbColours();
 function rgbColours() {
     hue += 1
